@@ -11,6 +11,7 @@ namespace Baitapnguoi_buoi4
         string mssv;
         string nganhhoc;
         double dtb;
+        
 
         public string Mssv { get => mssv; set => mssv = value; }
         public string Nganhhoc { get => nganhhoc; set => nganhhoc = value; }
@@ -18,7 +19,8 @@ namespace Baitapnguoi_buoi4
 
         public SinhVien() { }
 
-        public SinhVien(string mssv, string nganhhoc, double dtb )
+        public SinhVien(string hoten, string ngaysinh, string gioitinh,string mssv, string nganhhoc, double dtb )
+            :base(hoten, ngaysinh,gioitinh)
         {
             this.Mssv = mssv;
             this.Nganhhoc = nganhhoc;

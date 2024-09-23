@@ -19,11 +19,12 @@ namespace Baitapnguoi_buoi4
 
         public NhanVien() { }   
 
-        public NhanVien(string msnv, string luong, string chucvu )
+        public NhanVien(string hoten, string ngaysinh, string gioitinh,string msnv, string luong, string chucvu )
+            : base(hoten, ngaysinh, gioitinh)
         {
-            Msnv = msnv;
-            Luong = luong;
-            Chucvu = chucvu;
+            this.Msnv = msnv;
+            this.Luong = luong;
+            this.Chucvu = chucvu;
            
 
         }

@@ -31,7 +31,6 @@
             label4 = new Label();
             txt_hoten = new TextBox();
             label5 = new Label();
-            txt_ngaysinh = new TextBox();
             label6 = new Label();
             txt_gioitinh = new TextBox();
             dt_1 = new DataGridView();
@@ -48,7 +47,6 @@
             label9 = new Label();
             txt_msnv = new TextBox();
             label10 = new Label();
-            txt_ngaysinh2 = new TextBox();
             txt_luong = new TextBox();
             label11 = new Label();
             label12 = new Label();
@@ -56,6 +54,12 @@
             txt_chucvu = new TextBox();
             button1 = new Button();
             button2 = new Button();
+            dt_ngaysinh = new DateTimePicker();
+            dt_ngaysinh2 = new DateTimePicker();
+            bnt_xoa2 = new Button();
+            bnt_sua2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)dt_1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dt_2).BeginInit();
             SuspendLayout();
@@ -75,7 +79,7 @@
             // 
             txt_hoten.Font = new Font("Times New Roman", 18F);
             txt_hoten.Location = new Point(119, 6);
-            txt_hoten.Margin = new Padding(2, 2, 2, 2);
+            txt_hoten.Margin = new Padding(2);
             txt_hoten.Name = "txt_hoten";
             txt_hoten.Size = new Size(204, 35);
             txt_hoten.TabIndex = 2;
@@ -92,15 +96,6 @@
             label5.TabIndex = 1;
             label5.Text = "Ngày Sinh";
             // 
-            // txt_ngaysinh
-            // 
-            txt_ngaysinh.Font = new Font("Times New Roman", 18F);
-            txt_ngaysinh.Location = new Point(119, 45);
-            txt_ngaysinh.Margin = new Padding(2, 2, 2, 2);
-            txt_ngaysinh.Name = "txt_ngaysinh";
-            txt_ngaysinh.Size = new Size(204, 35);
-            txt_ngaysinh.TabIndex = 2;
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -116,7 +111,7 @@
             // 
             txt_gioitinh.Font = new Font("Times New Roman", 18F);
             txt_gioitinh.Location = new Point(119, 90);
-            txt_gioitinh.Margin = new Padding(2, 2, 2, 2);
+            txt_gioitinh.Margin = new Padding(2);
             txt_gioitinh.Name = "txt_gioitinh";
             txt_gioitinh.Size = new Size(204, 35);
             txt_gioitinh.TabIndex = 2;
@@ -125,7 +120,7 @@
             // 
             dt_1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dt_1.Location = new Point(-10, 258);
-            dt_1.Margin = new Padding(2, 2, 2, 2);
+            dt_1.Margin = new Padding(2);
             dt_1.Name = "dt_1";
             dt_1.Size = new Size(392, 190);
             dt_1.TabIndex = 4;
@@ -134,7 +129,7 @@
             // 
             dt_2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dt_2.Location = new Point(414, 258);
-            dt_2.Margin = new Padding(2, 2, 2, 2);
+            dt_2.Margin = new Padding(2);
             dt_2.Name = "dt_2";
             dt_2.Size = new Size(398, 190);
             dt_2.TabIndex = 4;
@@ -264,15 +259,6 @@
             label10.TabIndex = 1;
             label10.Text = "Lương";
             // 
-            // txt_ngaysinh2
-            // 
-            txt_ngaysinh2.Font = new Font("Times New Roman", 18F);
-            txt_ngaysinh2.Location = new Point(518, 44);
-            txt_ngaysinh2.Margin = new Padding(2);
-            txt_ngaysinh2.Name = "txt_ngaysinh2";
-            txt_ngaysinh2.Size = new Size(204, 35);
-            txt_ngaysinh2.TabIndex = 2;
-            // 
             // txt_luong
             // 
             txt_luong.Font = new Font("Times New Roman", 18F);
@@ -324,29 +310,94 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.FromArgb(255, 128, 0);
             button1.Location = new Point(332, 90);
             button1.Name = "button1";
             button1.Size = new Size(50, 62);
             button1.TabIndex = 5;
-            button1.Text = "Tìm";
-            button1.UseVisualStyleBackColor = true;
+            button1.Text = "Thêm";
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button2
             // 
+            button2.BackColor = Color.FromArgb(255, 128, 0);
             button2.Location = new Point(738, 102);
             button2.Name = "button2";
             button2.Size = new Size(50, 62);
             button2.TabIndex = 5;
             button2.Text = "Tìm";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // dt_ngaysinh
+            // 
+            dt_ngaysinh.Location = new Point(119, 57);
+            dt_ngaysinh.Name = "dt_ngaysinh";
+            dt_ngaysinh.Size = new Size(200, 22);
+            dt_ngaysinh.TabIndex = 6;
+            // 
+            // dt_ngaysinh2
+            // 
+            dt_ngaysinh2.Location = new Point(518, 57);
+            dt_ngaysinh2.Name = "dt_ngaysinh2";
+            dt_ngaysinh2.Size = new Size(200, 22);
+            dt_ngaysinh2.TabIndex = 7;
+            // 
+            // bnt_xoa2
+            // 
+            bnt_xoa2.BackColor = Color.FromArgb(255, 128, 128);
+            bnt_xoa2.Location = new Point(738, 14);
+            bnt_xoa2.Name = "bnt_xoa2";
+            bnt_xoa2.Size = new Size(50, 62);
+            bnt_xoa2.TabIndex = 5;
+            bnt_xoa2.Text = "Xóa";
+            bnt_xoa2.UseVisualStyleBackColor = false;
+            bnt_xoa2.Click += button1_Click;
+            // 
+            // bnt_sua2
+            // 
+            bnt_sua2.BackColor = SystemColors.ActiveCaption;
+            bnt_sua2.Location = new Point(738, 183);
+            bnt_sua2.Name = "bnt_sua2";
+            bnt_sua2.Size = new Size(50, 62);
+            bnt_sua2.TabIndex = 5;
+            bnt_sua2.Text = "Sửa";
+            bnt_sua2.UseVisualStyleBackColor = false;
+            bnt_sua2.Click += button1_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(332, 21);
+            button3.Name = "button3";
+            button3.Size = new Size(50, 48);
+            button3.TabIndex = 8;
+            button3.Text = "Sửa";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(332, 182);
+            button4.Name = "button4";
+            button4.Size = new Size(50, 48);
+            button4.TabIndex = 9;
+            button4.Text = "Xóa";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(dt_ngaysinh2);
+            Controls.Add(dt_ngaysinh);
             Controls.Add(button2);
+            Controls.Add(bnt_xoa2);
+            Controls.Add(bnt_sua2);
             Controls.Add(button1);
             Controls.Add(dt_2);
             Controls.Add(dt_1);
@@ -359,10 +410,8 @@
             Controls.Add(label3);
             Controls.Add(txt_luong);
             Controls.Add(label6);
-            Controls.Add(txt_ngaysinh2);
             Controls.Add(txt_nganhhoc);
             Controls.Add(label10);
-            Controls.Add(txt_ngaysinh);
             Controls.Add(txt_msnv);
             Controls.Add(label2);
             Controls.Add(label9);
@@ -387,7 +436,6 @@
         private Label label4;
         private TextBox txt_hoten;
         private Label label5;
-        private TextBox txt_ngaysinh;
         private Label label6;
         private TextBox txt_gioitinh;
         private DataGridView dt_1;
@@ -404,7 +452,6 @@
         private Label label9;
         private TextBox txt_msnv;
         private Label label10;
-        private TextBox txt_ngaysinh2;
         private TextBox txt_luong;
         private Label label11;
         private Label label12;
@@ -412,5 +459,11 @@
         private TextBox txt_chucvu;
         private Button button1;
         private Button button2;
+        private DateTimePicker dt_ngaysinh;
+        private DateTimePicker dt_ngaysinh2;
+        private Button bnt_xoa2;
+        private Button bnt_sua2;
+        private Button button3;
+        private Button button4;
     }
 }
